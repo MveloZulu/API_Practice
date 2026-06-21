@@ -16,11 +16,30 @@ public class weatherTest {
                 statusCode(201);
     }
     @Description("As an API user, I want to send get request that will update weather station details")
+    @Test(dependsOnMethods = "createWeatherTest")
     public void updateWeatherTest(){
         weatherRequest.updateWeatherStationRequest().
                 then().
                 log().all().
                 assertThat().
                 statusCode(200);
+    }
+    @Description("As an API user, I want to send get request that will retrieve weather station details")
+    @Test(dependsOnMethods = "updateWeatherTest")
+    public void readWeatherTest(){
+        weatherRequest.readWeatherStationRequest().
+                then().
+                log().all().
+                assertThat().
+                statusCode(200);
+    }
+    @Description("As an API user, I want to send delete request that will delete weather station")
+    @Test(dependsOnMethods = "readWeatherTest")
+    public void deleteWeatherTest(){
+        weatherRequest.deleteWeatherStationRequest().
+                then().
+                log().all().
+                assertThat().
+                statusCode(204);
     }
 }
