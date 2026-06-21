@@ -3,8 +3,7 @@ package RequestBuilder;
 import io.restassured.response.Response;
 
 import static Common.BasePaths.WeatherURL;
-import static PayloadReader.weatherPayload.createWeatherStationResponse;
-import static PayloadReader.weatherPayload.updateWeatherStationResponse;
+import static PayloadReader.weatherPayload.*;
 import static io.restassured.RestAssured.given;
 
 public class weatherRequest {
@@ -42,7 +41,39 @@ public class weatherRequest {
                 extract().
                 response();
 
-        stationId = response.jsonPath().getString("ID");
+       // stationId = response.jsonPath().getString("ID");
+        return response;
+
+    }
+    public static Response readWeatherStationRequest(){
+        Response response = given().
+                contentType("application/json").
+                when().
+                queryParam("appid",API_Key).
+                body(readWeatherStationResponse()).
+                log().all().
+                get(WeatherURL + "/data/3.0/stations/" + stationId).
+                then().
+                extract().
+                response();
+
+       // stationId = response.jsonPath().getString("ID");
+        return response;
+
+    }
+    public static Response deleteWeatherStationRequest(){
+        Response response = given().
+                contentType("application/json").
+                when().
+                queryParam("appid",API_Key).
+                body(deleteWeatherStationResponse()).
+                log().all().
+                delete(WeatherURL + "/data/3.0/stations/" + stationId).
+                then().
+                extract().
+                response();
+
+       // stationId = response.jsonPath().getString("ID");
         return response;
 
     }

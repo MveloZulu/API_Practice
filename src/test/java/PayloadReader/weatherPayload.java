@@ -30,4 +30,30 @@ public class weatherPayload {
 
         return jsonObject;
     }
+
+    public static JSONObject readWeatherStationResponse(){ //GET
+
+        JSONObject jsonObject = new JSONObject();
+
+        jsonObject.put("external_id", "SA_DUR104");
+        jsonObject.put("name", "San Nomvelo Test Station");
+        jsonObject.put("latitude",37.76);
+        jsonObject.put("longitude", -122.43);
+        jsonObject.put("altitude", 150);
+
+        return jsonObject;
+    }
+
+    public static JSONObject deleteWeatherStationResponse(){ //DELETE
+
+        JSONObject jsonObject = new JSONObject();
+
+        jsonObject.put("external_id", "SA_DUR104");
+        jsonObject.put("name", "San Nomvelo Test Station");
+        jsonObject.put("latitude",37.76);
+        jsonObject.put("longitude", -122.43);
+        jsonObject.put("altitude", 150);
+
+        return jsonObject;
+    }
 }
