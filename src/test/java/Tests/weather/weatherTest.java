@@ -7,7 +7,18 @@ import org.testng.annotations.Test;
 @Test
 public class weatherTest {
 
+    @Description("As an API user, I want to send post request that will create new weather station with empty name field")
+        public void createWeatherTestEmpty(){
+        weatherRequest.createWeatherStationRequestEmpty().
+                then().
+                log().all().
+                assertThat().
+                statusCode(400);
+    }
+
+
     @Description("As an API user, I want to send post request that will create new weather station")
+    @Test(dependsOnMethods = "createWeatherTestEmpty")
     public void createWeatherTest(){
         weatherRequest.createWeatherStationRequest().
                 then().
@@ -15,6 +26,7 @@ public class weatherTest {
                 assertThat().
                 statusCode(201);
     }
+
     @Description("As an API user, I want to send get request that will update weather station details")
     @Test(dependsOnMethods = "createWeatherTest")
     public void updateWeatherTest(){
