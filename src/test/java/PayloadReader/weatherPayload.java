@@ -17,6 +17,18 @@ public class weatherPayload {
 
         return jsonObject;
     }
+    public static JSONObject createWeatherStationResponseEmpty(){ //POST
+
+        JSONObject jsonObject = new JSONObject();
+
+        jsonObject.put("external_id", "SA_DUR104");
+        jsonObject.put("name", "");
+        jsonObject.put("latitude",37.76);
+        jsonObject.put("longitude", -122.43);
+        jsonObject.put("altitude", 150);
+
+        return jsonObject;
+    }
 
     public static JSONObject updateWeatherStationResponse(){ //PUT
 
