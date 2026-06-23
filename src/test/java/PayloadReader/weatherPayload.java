@@ -1,19 +1,23 @@
 package PayloadReader;
 
+import Common.TestDataGenerator;
 import io.restassured.response.Response;
 import org.json.simple.JSONObject;
 
 public class weatherPayload {
 
+    static Double latitudeNo = Double.valueOf(TestDataGenerator.latitude);
+    static Double longitudeNo = Double.valueOf(TestDataGenerator.longitude);
+    static int altitudeNo = Integer.valueOf(TestDataGenerator.altitude);
     public static JSONObject createWeatherStationResponse(){ //POST
 
         JSONObject jsonObject = new JSONObject();
 
         jsonObject.put("external_id", "SA_DUR104");
         jsonObject.put("name", "San Francisco Test Station");
-        jsonObject.put("latitude",37.76);
-        jsonObject.put("longitude", -122.43);
-        jsonObject.put("altitude", 150);
+        jsonObject.put("latitude",latitudeNo);
+        jsonObject.put("longitude", longitudeNo);
+        jsonObject.put("altitude", altitudeNo);
 
         return jsonObject;
     }
@@ -23,9 +27,9 @@ public class weatherPayload {
 
         jsonObject.put("external_id", "SA_DUR104");
         jsonObject.put("name", "");
-        jsonObject.put("latitude",37.76);
-        jsonObject.put("longitude", -122.43);
-        jsonObject.put("altitude", 150);
+        jsonObject.put("latitude",latitudeNo);
+        jsonObject.put("longitude", longitudeNo);
+        jsonObject.put("altitude", altitudeNo);
 
         return jsonObject;
     }
@@ -36,9 +40,9 @@ public class weatherPayload {
 
         jsonObject.put("external_id", "SA_DUR104");
         jsonObject.put("name", "San Nomvelo Test Station");
-        jsonObject.put("latitude",37.76);
-        jsonObject.put("longitude", -122.43);
-        jsonObject.put("altitude", 150);
+        jsonObject.put("latitude",latitudeNo);
+        jsonObject.put("longitude", longitudeNo);
+        jsonObject.put("altitude", altitudeNo);
 
         return jsonObject;
     }
@@ -49,9 +53,9 @@ public class weatherPayload {
 
         jsonObject.put("external_id", "SA_DUR104");
         jsonObject.put("name", "San Nomvelo Test Station");
-        jsonObject.put("latitude",37.76);
-        jsonObject.put("longitude", -122.43);
-        jsonObject.put("altitude", 150);
+        jsonObject.put("latitude",latitudeNo);
+        jsonObject.put("longitude", longitudeNo);
+        jsonObject.put("altitude", altitudeNo);
 
         return jsonObject;
     }
@@ -62,9 +66,9 @@ public class weatherPayload {
 
         jsonObject.put("external_id", "SA_DUR104");
         jsonObject.put("name", "San Nomvelo Test Station");
-        jsonObject.put("latitude",37.76);
-        jsonObject.put("longitude", -122.43);
-        jsonObject.put("altitude", 150);
+        jsonObject.put("latitude",latitudeNo);
+        jsonObject.put("longitude", longitudeNo);
+        jsonObject.put("altitude", altitudeNo);
 
         return jsonObject;
     }
